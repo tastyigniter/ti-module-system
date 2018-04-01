@@ -4,7 +4,7 @@ namespace System\Traits;
 
 use Mail;
 
-trait CanSendMailTemplates
+trait SendsMailTemplate
 {
     public function mailGetRecipients($type)
     {
