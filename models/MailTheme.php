@@ -8,11 +8,11 @@ use Igniter\Flame\Support\Facades\File;
 use Illuminate\Support\Facades\Cache;
 
 /**
- * MailThemes Model Class
+ * MailTheme Model Class
  * @method static instance()
  * @method static get($var, $default)
  */
-class Mail_themes_model extends Model
+class MailTheme extends Model
 {
     const WHITE_COLOR = '#fff';
     const BODY_BG = '#f5f8fa';
@@ -132,3 +132,5 @@ class Mail_themes_model extends Model
         return File::get($basePath.'/default.css');
     }
 }
+
+class_alias('System\Models\MailTheme', 'System\Models\Mail_themes_model', FALSE);

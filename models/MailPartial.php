@@ -11,9 +11,9 @@ use Illuminate\Support\Facades\View;
 use System\Classes\MailManager;
 
 /**
- * MailPartials Model Class
+ * MailPartial Model Class
  */
-class Mail_partials_model extends Model
+class MailPartial extends Model
 {
     protected static $codeCache;
 
@@ -115,3 +115,5 @@ class Mail_partials_model extends Model
         return MailParser::parse(File::get(View::make($code)->getPath()));
     }
 }
+
+class_alias('System\Models\MailPartial', 'System\Models\Mail_partials_model', FALSE);

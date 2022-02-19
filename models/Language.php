@@ -4,13 +4,12 @@ namespace System\Models;
 
 use Igniter\Flame\Database\Traits\Purgeable;
 use Igniter\Flame\Exception\ValidationException;
-use Igniter\Flame\Translation\Models\Language;
 use Illuminate\Support\Facades\Lang;
 
 /**
- * Languages Model Class
+ * Language Model Class
  */
-class Languages_model extends Language
+class Language extends \Igniter\Flame\Translation\Models\Language
 {
     use Purgeable;
 
@@ -23,7 +22,7 @@ class Languages_model extends Language
 
     public $relation = [
         'hasMany' => [
-            'translations' => ['System\Models\Translations_model', 'foreignKey' => 'locale', 'otherKey' => 'code', 'delete' => TRUE],
+            'translations' => ['System\Models\Translation', 'foreignKey' => 'locale', 'otherKey' => 'code', 'delete' => TRUE],
         ],
     ];
 
@@ -188,7 +187,7 @@ class Languages_model extends Language
 
     public function listAllFiles()
     {
-        traceLog('Method Languages_model::listAllFiles() has been deprecated. Use Translator loader instead.');
+        traceLog('Method Language::listAllFiles() has been deprecated. Use Translator loader instead.');
     }
 
     public function getLines($locale, $group, $namespace = null)
@@ -248,3 +247,5 @@ class Languages_model extends Language
         $translation->updateAndLock($text);
     }
 }
+
+class_alias('System\Models\Language', 'System\Models\Languages_model', FALSE);

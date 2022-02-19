@@ -6,9 +6,9 @@ use Igniter\Flame\Database\Model;
 use Igniter\Flame\Database\Traits\Sortable;
 
 /**
- * Countries Model Class
+ * Country Model Class
  */
-class Countries_model extends Model
+class Country extends Model
 {
     use Sortable;
 
@@ -33,7 +33,7 @@ class Countries_model extends Model
 
     public $relation = [
         'hasOne' => [
-            'currency' => 'System\Models\Currencies_model',
+            'currency' => 'System\Models\Currency',
         ],
     ];
 
@@ -57,3 +57,5 @@ class Countries_model extends Model
         return $query->where('status', 1);
     }
 }
+
+class_alias('System\Models\Country', 'System\Models\Countries_model', FALSE);

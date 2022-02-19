@@ -18,7 +18,7 @@ use System\Traits\ConfigMaker;
 /**
  * Settings Model Class
  */
-class Settings_model extends Model
+class Settings extends Model
 {
     use ConfigMaker;
 
@@ -32,7 +32,7 @@ class Settings_model extends Model
      */
     protected $primaryKey = 'setting_id';
 
-    protected $settingsFields = 'settings_model';
+    protected $settingsFields = 'Settings';
 
     protected $fieldConfig;
 
@@ -355,3 +355,5 @@ class Settings_model extends Model
         ]);
     }
 }
+
+class_alias('System\Models\Settings', 'System\Models\Settings_model', FALSE);

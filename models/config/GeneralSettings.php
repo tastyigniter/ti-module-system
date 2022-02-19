@@ -33,7 +33,7 @@ return [
                     'label' => 'lang:system::lang.settings.label_country',
                     'tab' => 'lang:system::lang.settings.text_tab_restaurant',
                     'type' => 'select',
-                    'options' => ['System\Models\Countries_model', 'getDropdownOptions'],
+                    'options' => ['System\Models\Country', 'getDropdownOptions'],
                 ],
                 'site_logo' => [
                     'label' => 'lang:system::lang.settings.label_site_logo',
@@ -89,7 +89,7 @@ return [
                     'type' => 'select',
                     'default' => 'en',
                     'span' => 'left',
-                    'options' => ['System\Models\Languages_model', 'getDropdownOptions'],
+                    'options' => ['System\Models\Language', 'getDropdownOptions'],
                     'placeholder' => 'lang:admin::lang.text_please_select',
                 ],
                 'detect_language' => [
@@ -110,7 +110,7 @@ return [
                     'span' => 'left',
                     'type' => 'select',
                     'default' => 'GBP',
-                    'options' => ['System\Models\Currencies_model', 'getDropdownOptions'],
+                    'options' => ['System\Models\Currency', 'getDropdownOptions'],
                     'placeholder' => 'lang:admin::lang.text_please_select',
                     'comment' => 'lang:system::lang.settings.help_site_currency',
                 ],
@@ -120,7 +120,7 @@ return [
                     'span' => 'right',
                     'type' => 'select',
                     'default' => 'openexchangerates',
-                    'options' => ['System\Models\Currencies_model', 'getConverterDropdownOptions'],
+                    'options' => ['System\Models\Currency', 'getConverterDropdownOptions'],
                 ],
                 'currency_converter[oer][apiKey]' => [
                     'label' => 'lang:system::lang.settings.label_currency_converter_oer_api_key',

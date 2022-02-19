@@ -2,13 +2,12 @@
 
 namespace System\Models;
 
-use Igniter\Flame\Currency\Models\Currency;
 use Igniter\Flame\Exception\ValidationException;
 
 /**
- * Currencies Model Class
+ * Currency Model Class
  */
-class Currencies_model extends Currency
+class Currency extends \Igniter\Flame\Currency\Models\Currency
 {
     /**
      * @var string The database table name
@@ -34,7 +33,7 @@ class Currencies_model extends Currency
 
     public $relation = [
         'belongsTo' => [
-            'country' => 'System\Models\Countries_model',
+            'country' => 'System\Models\Country',
         ],
     ];
 
@@ -214,3 +213,5 @@ class Currencies_model extends Currency
         return $this->currency_status;
     }
 }
+
+class_alias('System\Models\Currency', 'System\Models\Currencies_model', FALSE);

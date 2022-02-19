@@ -10,9 +10,9 @@ use Illuminate\Support\Facades\View;
 use System\Classes\MailManager;
 
 /**
- * MailLayouts Model Class
+ * MailLayout Model Class
  */
-class Mail_layouts_model extends Model
+class MailLayout extends Model
 {
     protected static $codeCache;
 
@@ -41,10 +41,10 @@ class Mail_layouts_model extends Model
 
     public $relation = [
         'hasMany' => [
-            'templates' => ['System\Models\Mail_templates_model', 'foreignKey' => 'layout_id'],
+            'templates' => ['System\Models\MailTemplate', 'foreignKey' => 'layout_id'],
         ],
         'belongsTo' => [
-            'language' => 'System\Models\Languages_model',
+            'language' => 'System\Models\Language',
         ],
     ];
 
@@ -140,3 +140,5 @@ class Mail_layouts_model extends Model
         }
     }
 }
+
+class_alias('System\Models\MailLayout', 'System\Models\Mail_layouts_model', FALSE);
