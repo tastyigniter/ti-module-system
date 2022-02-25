@@ -10,9 +10,9 @@ use Main\Classes\ThemeManager;
 use System\Classes\ExtensionManager;
 
 /**
- * Extensions Model Class
+ * Extension Model Class
  */
-class Extensions_model extends Model
+class Extension extends Model
 {
     const ICON_MIMETYPES = [
         'svg' => 'image/svg+xml',

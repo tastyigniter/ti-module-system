@@ -7,9 +7,9 @@ use Igniter\Flame\Database\Traits\Sortable;
 use Igniter\Flame\Exception\ValidationException;
 
 /**
- * Countries Model Class
+ * Country Model Class
  */
-class Countries_model extends Model
+class Country extends Model
 {
     use Sortable;
 
@@ -34,7 +34,7 @@ class Countries_model extends Model
 
     public $relation = [
         'hasOne' => [
-            'currency' => 'System\Models\Currencies_model',
+            'currency' => 'System\Models\Currency',
         ],
     ];
 

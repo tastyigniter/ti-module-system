@@ -6,9 +6,9 @@ use Igniter\Flame\Database\Model;
 use Igniter\Flame\Database\Traits\HasPermalink;
 
 /**
- * Pages Model Class
+ * Page Class
  */
-class Pages_model extends Model
+class Page extends Model
 {
     use HasPermalink;
 
@@ -37,7 +37,7 @@ class Pages_model extends Model
 
     public $relation = [
         'belongsTo' => [
-            'language' => 'System\Models\Languages_model',
+            'language' => 'System\Models\Language',
         ],
     ];
 
