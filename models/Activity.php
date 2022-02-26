@@ -2,14 +2,13 @@
 
 namespace System\Models;
 
-use Igniter\Flame\ActivityLog\Models\Activity;
 use Igniter\Flame\Database\Model;
 use System\Classes\ExtensionManager;
 
 /**
  * Activities Model Class
  */
-class Activities_model extends Activity
+class Activity extends \Igniter\Flame\ActivityLog\Models\Activity
 {
     public static function unreadCount($menu, $item, Model $user)
     {

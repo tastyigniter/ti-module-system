@@ -7,16 +7,15 @@ use Igniter\Flame\Database\Model;
 use Igniter\Flame\Database\Traits\Purgeable;
 use Igniter\Flame\Exception\ApplicationException;
 use Illuminate\Support\Facades\Event;
-use Main\Classes\Theme;
 use Main\Classes\ThemeManager;
 use Main\Template\Layout;
 use System\Classes\ComponentManager;
 use System\Classes\ExtensionManager;
 
 /**
- * Themes Model Class
+ * Theme Model Class
  */
-class Themes_model extends Model
+class Theme extends Model
 {
     use Purgeable;
 
@@ -61,7 +60,7 @@ class Themes_model extends Model
 
     protected $fieldValues = [];
 
-    public static function forTheme(Theme $theme)
+    public static function forTheme(\Main\Classes\Theme $theme)
     {
         $dirName = $theme->getDirName();
         if ($instance = array_get(self::$instances, $dirName)) {

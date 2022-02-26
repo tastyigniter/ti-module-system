@@ -11,9 +11,9 @@ use Illuminate\Support\Facades\View;
 use System\Classes\MailManager;
 
 /**
- * MailPartials Model Class
+ * MailPartial Model Class
  */
-class Mail_partials_model extends Model
+class MailPartial extends Model
 {
     protected static $codeCache;
 
