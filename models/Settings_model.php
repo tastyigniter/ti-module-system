@@ -103,20 +103,20 @@ class Settings_model extends Model
     {
         $theme = ThemeManager::instance()->getActiveTheme();
 
-        return Page::getDropdownOptions($theme, TRUE);
+        return Page::getDropdownOptions($theme, true);
     }
 
     public static function getReservationPageOptions()
     {
         $theme = ThemeManager::instance()->getActiveTheme();
 
-        return Page::getDropdownOptions($theme, TRUE);
+        return Page::getDropdownOptions($theme, true);
     }
 
     public static function onboardingIsComplete()
     {
         if (!Session::has('settings.errors'))
-            return FALSE;
+            return false;
 
         return count(array_filter((array)Session::get('settings.errors'))) === 0;
     }
@@ -214,9 +214,9 @@ class Settings_model extends Model
         });
 
         $allItems = [];
-        $catItems = ['core' => [], 'other' => []];
+        $catItems = ['core' => [], 'extensions' => []];
         foreach ($this->items as $item) {
-            $category = ($item->owner != 'core') ? 'other' : $item->owner;
+            $category = ($item->owner != 'core') ? 'extensions' : $item->owner;
             $catItems[$category][] = $item;
 
             $allItems[$item->owner.'.'.$item->code] = $item;
